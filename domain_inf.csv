@@ -1,0 +1,11 @@
+Domain "Min RTT" "Max RTT" "Avg RTT" "Packets Sent" "Packets Received" "Packet Loss"
+google.com 66.648 72.204 70.505 5 5 0.0
+yandex.ru 62.254 67.472 63.602 5 5 0.0
+github.com 72.395 185.529 100.471 5 5 0.0
+stackoverflow.com 75.628 253.367 117.87 5 5 0.0
+wikipedia.org 95.704 115.404 101.887 5 5 0.0
+bing.com 80.759 93.304 86.41 5 5 0.0
+amazon.com 0.0 0.0 0.0 5 0 1.0
+microsoft.com 0.0 0.0 0.0 5 0 1.0
+reddit.com 79.688 83.148 81.358 5 5 0.0
+openai.com 60.464 62.454 61.519 5 5 0.0
