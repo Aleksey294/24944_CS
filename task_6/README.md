@@ -1,4 +1,4 @@
-# FastAPI Parser + PostgreSQL
+# FastAPI Parser + PostgreSQL + Nginx
 
 # Запуск
 
@@ -36,13 +36,13 @@ docker run -d --name nginx_proxy --network parser-network -p 80:80 -v ${PWD}\ngi
 Swagger:
 
 ```text
-http://localhost/docs
+http://localhost:80/docs
 ```
 
 Парсинг сайта:
 
 ```http
-POST http://localhost/parse
+POST http://localhost:80/parse
 ```
 
 Body:
@@ -56,5 +56,5 @@ Body:
 Получение всех товаров:
 
 ```http
-GET http://localhost/items
+GET http://localhost:80/items
 ```
