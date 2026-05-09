@@ -1,0 +1,44 @@
+version: "3.9"
+
+services:
+
+  db:
+    image: postgres:16
+    container_name: db_container
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: parser_db
+    ports:
+      - "5432:5432"
+    networks:
+      - parser-network
+    restart: always
+
+  parser_app:
+    build: .
+    container_name: parser_app
+    expose:
+      - "8000"
+    depends_on:
+      - db
+    networks:
+      - parser-network
+    restart: always
+
+  nginx:
+    image: nginx:stable
+    container_name: nginx_proxy
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+    depends_on:
+      - parser_app
+    networks:
+      - parser-network
+    restart: always
+
+networks:
+  parser-network:
+    driver: bridge

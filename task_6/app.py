@@ -32,12 +32,12 @@ def parse(req: ParseRequest, db: Session = Depends(get_db)):
 
     added = 0
 
-    for el in data:
+    for element in data:
 
         item = Item(
-            title=el["title"],
-            price=el["price"],
-            link=el["link"]
+            title=element["title"],
+            price=element["price"],
+            link=element["link"]
         )
 
         db.add(item)
