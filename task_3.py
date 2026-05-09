@@ -29,7 +29,7 @@ def parse_items(page, pages_to_parse):
     results = []
 
     for pg in range(pages_to_parse):
-        page.wait_for_selector('a[href*="/itm/"]')  # ждем товары
+        page.wait_for_selector('a[href*="/itm/"]')
 
         items = page.locator('a[href*="/itm/"]')
 
